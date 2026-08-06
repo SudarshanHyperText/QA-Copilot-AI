@@ -1,0 +1,35 @@
+.sql-card{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.sql-card h3{
+
+    color:#2563EB;
+
+    margin-bottom:15px;
+
+}
+
+.sql-card pre{
+
+    background:#111827;
+
+    color:#22C55E;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    overflow:auto;
+
+}

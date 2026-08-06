@@ -1,0 +1,35 @@
+.result-container{
+
+    margin-top:40px;
+
+}
+
+.result-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.result-card h2{
+
+    margin-bottom:20px;
+
+    color:#2563EB;
+
+}
+
+.result-card pre{
+
+    white-space:pre-wrap;
+
+    overflow:auto;
+
+}
