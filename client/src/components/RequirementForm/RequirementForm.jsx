@@ -72,7 +72,7 @@ export default function RequirementForm({ setResponse }) {
 
                     ?
 
-                    "Generating... please wait 15 seconds"
+                    "Generating... please wait 30 seconds"
 
                     :
 
@@ -81,6 +81,9 @@ export default function RequirementForm({ setResponse }) {
                 }
 
             </button>
+            <div className="note-box">
+                The first request may take up to 60 seconds after inactivity. Once the service is active, responses are much faster.
+            </div>
 
         </div>
 

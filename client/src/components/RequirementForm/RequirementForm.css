@@ -71,3 +71,13 @@
     transform:translateY(-2px);
 
 }
+
+.note-box{
+    margin-top:15px;
+    padding:12px 16px;
+    border-radius:8px;
+    background:#fff8e6;
+    border-left:4px solid #f59e0b;
+    color:#555;
+    font-size:14px;
+}
