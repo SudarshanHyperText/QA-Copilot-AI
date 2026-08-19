@@ -2,7 +2,7 @@ import axios from "axios";
 
 const api = axios.create({
 
-    baseURL: "https://qa-copilot-ai.onrender.com/api"
+    baseURL: `${process.env.REACT_APP_API_RESUME_URL}/api`
 
 });
 

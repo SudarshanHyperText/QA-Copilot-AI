@@ -45,7 +45,7 @@ function ResumeAnalyzer() {
             formData.append("resume", file);
 
             const res = await fetch(
-                "http://localhost:5000/api/resume/analyze",
+                `${process.env.REACT_APP_API_RESUME_URL}/api/resume/analyze`,
                 {
                     method: "POST",
                     body: formData

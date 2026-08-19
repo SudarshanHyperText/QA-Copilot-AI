@@ -223,3 +223,41 @@
     }
 
 }
+@media (max-width: 768px) {
+
+    .resume-analyzer {
+        width: 94%;
+        padding: 25px;
+    }
+
+    .score-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+
+    .score-circle {
+        margin: 0 auto;
+    }
+
+    .score-info {
+        width: 100%;
+        text-align: left;
+    }
+
+    .score-info h3 {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .score-info p {
+        text-align: left;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
