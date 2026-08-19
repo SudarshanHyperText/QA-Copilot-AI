@@ -117,8 +117,11 @@ function ResumeAnalyzer() {
                 onClick={handleAnalyze}
                 disabled={loading}
             >
-                {loading ? "Analyzing Resume..." : "Analyze Resume"}
+                {loading ? "Analyzing Resume... please wait 30 seconds" : "Analyze Resume"}
             </button>
+            <div className="note-box">
+                The first request may take up to 60 seconds after inactivity. Once the service is active, responses are much faster.
+            </div>
 
             {response && (
 
