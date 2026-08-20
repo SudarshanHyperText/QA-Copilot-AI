@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./RequirementForm.css";
 import { generateTestCases } from "../../services/api";
+import AiLoading from "../AiLoading/AiLoading";
 
 export default function RequirementForm({ setResponse }) {
 
@@ -81,6 +82,9 @@ export default function RequirementForm({ setResponse }) {
                 }
 
             </button>
+            {loading && (
+    <AiLoading type="testcase" />
+)}
             <div className="note-box">
                 The first request may take up to 60 seconds after inactivity. Once the service is active, responses are much faster.
             </div>
