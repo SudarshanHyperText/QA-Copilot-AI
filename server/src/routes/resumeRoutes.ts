@@ -1,6 +1,13 @@
 import { Router } from "express";
+
 import multer from "multer";
-import { analyze, extractResume } from "../controllers/resumeController";
+
+import {
+    analyze,
+    extractResume
+} from "../controllers/resumeController";
+
+import { aiLimiter } from "../middleware/rateLimiter";
 
 const router = Router();
 
@@ -8,8 +15,20 @@ const upload = multer({
     dest: "uploads/"
 });
 
-router.post("/analyze", upload.single("resume"), analyze);
 
-router.post("/extract", upload.single("resume"), extractResume);
+router.post(
+    "/analyze",
+    aiLimiter,
+    upload.single("resume"),
+    analyze
+);
+
+
+router.post(
+    "/extract",
+    upload.single("resume"),
+    extractResume
+);
+
 
 export default router;
