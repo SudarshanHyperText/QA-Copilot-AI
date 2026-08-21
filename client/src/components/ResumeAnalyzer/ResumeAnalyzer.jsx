@@ -55,8 +55,16 @@ function ResumeAnalyzer() {
 
             const data = await res.json();
 
+            if (res.status === 429) {
+                setError(
+                    data?.message ||
+                    "You have exceeded the maximum limits. Please try again later."
+                );
+                return;
+            }
+
             if (!res.ok) {
-                throw new Error(data.message || "Resume analysis failed.");
+                throw new Error(data?.message || "Resume analysis failed.");
             }
 
             setResponse(data.data);
