@@ -21,9 +21,19 @@ export default function AiLoading({ type }) {
         "Generating Playwright automation..."
     ];
 
+    const hrSteps = [
+        "Reading candidate resume...",
+        "Parsing job requirements...",
+        "Comparing skills against the JD...",
+        "Identifying matches and gaps...",
+        "Calculating match percentage..."
+    ];
+
     const steps = type === "resume"
         ? resumeSteps
-        : testCaseSteps;
+        : type === "hr"
+            ? hrSteps
+            : testCaseSteps;
 
     useEffect(() => {
 
@@ -55,7 +65,9 @@ export default function AiLoading({ type }) {
             <h3>
                 {type === "resume"
                     ? "AI is analyzing your resume"
-                    : "AI is generating your test cases"}
+                    : type === "hr"
+                        ? "AI is matching resume to requirements"
+                        : "AI is generating your test cases"}
             </h3>
 
             <div className="ai-steps">

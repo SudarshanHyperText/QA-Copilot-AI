@@ -4,7 +4,8 @@ import multer from "multer";
 
 import {
     analyze,
-    extractResume
+    extractResume,
+    matchResume
 } from "../controllers/resumeController";
 
 import { aiLimiter } from "../middleware/rateLimiter";
@@ -21,6 +22,14 @@ router.post(
     aiLimiter,
     upload.single("resume"),
     analyze
+);
+
+
+router.post(
+    "/match",
+    aiLimiter,
+    upload.single("resume"),
+    matchResume
 );
 
 

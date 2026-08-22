@@ -1,33 +1,56 @@
-.playwright-card{
-
-    background:white;
-
-    border-radius:16px;
-
-    overflow:hidden;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-
+.playwright-card {
+    background: #070b16;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #1e293b;
+    max-width: 100%;
 }
 
-.code-header{
-
-    background:#111827;
-
-    color:white;
-
-    padding:15px;
-
+.code-header {
+    background: #10182b;
+    color: white;
+    padding: 12px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
 }
 
-.playwright-card pre{
+.code-header h3 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
 
-    padding:20px;
+.code-header button {
+    border: 1px solid #334155;
+    background: transparent;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
 
-    background:#1E293B;
+.playwright-card pre {
+    padding: 16px;
+    color: #c4b5fd;
+    overflow: auto;
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-width: 100%;
+}
 
-    color:#22C55E;
+@media (max-width: 768px) {
+    .code-header {
+        flex-wrap: wrap;
+    }
 
-    overflow:auto;
-
+    .playwright-card pre {
+        font-size: 12px;
+        padding: 12px;
+    }
 }

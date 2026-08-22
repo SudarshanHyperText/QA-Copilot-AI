@@ -1,15 +1,26 @@
 export interface ManualTestCase {
     id: string;
     title: string;
-    steps: string;
-    expectedResult: string;
+    module?: string;
+    type?: string;
     priority: string;
+    severity?: string;
+    preconditions?: string;
+    testData?: string;
+    steps: string[] | string;
+    expectedResult: string;
 }
 
 export interface ApiTestCase {
     title: string;
     method: string;
-    expectedStatus: string;
+    endpoint?: string;
+    headers?: Record<string, unknown> | string;
+    queryParams?: Record<string, unknown> | string;
+    requestBody?: Record<string, unknown> | string;
+    expectedStatus: string | number;
+    expectedResponse?: string;
+    assertions?: string[];
 }
 
 export interface SqlQuery {
