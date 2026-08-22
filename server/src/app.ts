@@ -7,6 +7,7 @@ import cors from "cors";
 
 import aiRoutes from "./routes/aiRoutes";
 import resumeRoutes from "./routes/resumeRoutes";
+import jobRoutes from "./routes/jobRoutes";
 
 
 const app: Application = express();
@@ -40,6 +41,8 @@ app.get("/", (req, res) => {
 app.use("/api", aiRoutes);
 
 app.use("/api/resume", resumeRoutes);
+
+app.use("/api/jobs", jobRoutes);
 
 
 export default app;

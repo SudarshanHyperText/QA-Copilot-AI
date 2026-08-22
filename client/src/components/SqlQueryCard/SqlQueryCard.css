@@ -1,35 +1,38 @@
-.sql-card{
-
-    background:white;
-
-    padding:20px;
-
-    border-radius:15px;
-
-    margin-bottom:15px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-
+.sql-card {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
-.sql-card h3{
-
-    color:#2563EB;
-
-    margin-bottom:15px;
-
+.sql-card:last-child {
+    margin-bottom: 0;
 }
 
-.sql-card pre{
+.sql-card h3 {
+    color: var(--ink);
+    margin-bottom: 12px;
+    font-size: 15px;
+}
 
-    background:#111827;
+.sql-card pre {
+    background: #070b16;
+    color: #86efac;
+    padding: 14px;
+    border-radius: 12px;
+    overflow: auto;
+    font-size: 13px;
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
 
-    color:#22C55E;
-
-    padding:18px;
-
-    border-radius:10px;
-
-    overflow:auto;
-
+@media (max-width: 768px) {
+    .sql-card {
+        padding: 14px;
+    }
 }

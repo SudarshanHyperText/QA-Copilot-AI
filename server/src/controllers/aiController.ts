@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 import { generateTestCases } from "../services/geminiService";
+import { createJob, runJob, toPublicJob } from "../services/jobStore";
+
 export const generate = async (req: Request, res: Response) => {
-
     try {
-
         const { requirement } = req.body;
 
         if (!requirement) {
@@ -13,25 +13,23 @@ export const generate = async (req: Request, res: Response) => {
             });
         }
 
-        const response = await generateTestCases(requirement);
+        const job = createJob("testcase", { requirement });
 
-        return res.status(200).json({
+        runJob(job.id, () => generateTestCases(requirement));
+
+        return res.status(202).json({
             success: true,
-            message: "Test Cases Generated Successfully",
-            data: response
+            message: "Test case job started",
+            jobId: job.id,
+            data: toPublicJob(job)
         });
-
     } catch (error: any) {
+        console.error("========== ERROR ==========");
+        console.error(error);
 
-    console.error("========== ERROR ==========");
-    console.error(error);
-
-    return res.status(500).json({
-        success: false,
-        message: error.message,
-        stack: error.stack
-    });
-
-}
-
+        return res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
 };

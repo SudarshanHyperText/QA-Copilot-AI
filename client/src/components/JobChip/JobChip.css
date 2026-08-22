@@ -1,0 +1,54 @@
+.job-chip {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    animation: fade-in 0.3s ease;
+    max-width: 100%;
+}
+
+.job-id {
+    font-family: ui-monospace, Consolas, monospace;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    overflow-wrap: anywhere;
+    word-break: break-all;
+}
+
+.job-status {
+    text-transform: capitalize;
+}
+
+.job-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #94a3b8;
+}
+
+.job-running .job-dot,
+.job-queued .job-dot {
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-soft);
+    animation: job-pulse 1.2s ease-in-out infinite;
+}
+
+.job-completed .job-dot {
+    background: var(--success);
+}
+
+.job-failed .job-dot {
+    background: var(--danger);
+}
+
+@keyframes job-pulse {
+    50% { transform: scale(1.25); }
+}
